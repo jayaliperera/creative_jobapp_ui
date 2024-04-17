@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+class CustomSearchBar extends StatelessWidget {
+  const CustomSearchBar({
+    super.key,
+    required this.size,
+  });
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        SizedBox(
+            width: size.width * 0.75,
+            child: TextField(
+              decoration: InputDecoration(
+                  border: UnderlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(15)),
+                  hintText: "Search For Jobs",
+                  fillColor: Colors.white,
+                  filled: true),
+            )),
+        const SizedBox(width: 10),
+        Container(
+            height: 43,
+            width: 55,
+            decoration: BoxDecoration(
+                color: Colors.black, borderRadius: BorderRadius.circular(12)),
+            child: const Icon(
+              Icons.search_rounded,
+              color: Colors.white,
+            )),
+      ],
+    );
+  }
+}
